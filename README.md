@@ -39,26 +39,22 @@ X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-2\pi i \frac{k n}{N}}
 ```
 이때 x[n]은 주어진 신호의 n번째 값이고, X[k]는 주파수 도메인에서의 k번째 성분이다. 이를 증명하면,
 복소 지수 함수는 오일러의 공식에 의해 다음과 같이 표현된다:
-$ e^{ix} = \cos(x) + i \cdot \sin(x)$ \
+$e^{ix} = \cos(x) + i \cdot \sin(x)$ \
 따라서 푸리에 변환의 기본 식에서 지수 부분을 확장하면: \
-$
-X[k] = \sum_{n=0}^{N-1} x[n] \cdot \left( \cos\left( -2\pi \frac{k n}{N} \right) + i \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)
-$
+$X[k] = \sum_{n=0}^{N-1} x[n] \cdot \left( \cos\left( -2\pi \frac{k n}{N} \right) + i \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$
 
 이 식을 실수 부분과 허수 부분으로 나누어 보면: \
-$
-X[k] = \sum_{n=0}^{N-1} \left( x[n] \cdot \cos\left( -2\pi \frac{k n}{N} \right) \right) + i \cdot \sum_{n=0}^{N-1} \left( x[n] \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)
-$ \
-이때 $ \cos(-x) = \cos(x) $이고, $ \sin(-x) = -\sin(x) $이므로, 각 항을 정리하면 다음과 같은 식을 얻을 수 있다. 
+$X[k] = \sum_{n=0}^{N-1} \left( x[n] \cdot \cos\left( -2\pi \frac{k n}{N} \right) \right) + i \cdot \sum_{n=0}^{N-1} \left( x[n] \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$ \
+이때 $ \cos(-x) = \cos(x) $이고, $\sin(-x) = -\sin(x)$이므로, 각 항을 정리하면 다음과 같은 식을 얻을 수 있다. 
 ```math
 X[k] = \sum_{n=0}^{N-1} x[n] \cdot \cos\left( 2\pi \frac{k n}{N} \right) - i \cdot \sum_{n=0}^{N-1} x[n] \cdot \sin\left( 2\pi \frac{k n}{N} \right)
 ```
-즉, $ X[k] $는 실수부와 허수부로 나뉘어 표현될 수 있다:
-- 실수부: $ \sum_{n=0}^{N-1} x[n] \cdot \cos\left( 2\pi \frac{k n}{N} \right) $ 
+즉, $X[k]$는 실수부와 허수부로 나뉘어 표현될 수 있다:
+- 실수부: $\sum_{n=0}^{N-1} x[n] \cdot \cos\left( 2\pi \frac{k n}{N} \right)$ 
 
-- 허수부: $ - \sum_{n=0}^{N-1} x[n] \cdot \sin\left( 2\pi \frac{k n}{N} \right) $
+- 허수부: $-\sum_{n=0}^{N-1} x[n] \cdot \sin\left( 2\pi \frac{k n}{N} \right)$
 
-위 식을 통해 $ X[k] $는 시간 도메인의 신호 $ x[n] $의 각 성분을 주파수 도메인에서 대응되는 주파수 성분으로 변환한 것이다. 각 주파수 성분 $ k $에 대해 시간 도메인 신호의 각 성분 $ n $에 복소 지수 함수 값을 곱한 후, 이를 모두 합산함으로써 주파수 도메인에서의 $ k $번째 성분을 구할 수 있다.
+위 식을 통해 $X[k]$는 시간 도메인의 신호 $x[n]$의 각 성분을 주파수 도메인에서 대응되는 주파수 성분으로 변환한 것이다. 각 주파수 성분 $k$에 대해 시간 도메인 신호의 각 성분 $n$에 복소 지수 함수 값을 곱한 후, 이를 모두 합산함으로써 주파수 도메인에서의 $k$번째 성분을 구할 수 있다.
 
 이 변환의 결과는 시간 도메인 신호가 주파수 도메인에서 어떻게 분포되어 있는지를 나타내며, 이는 각 주파수 성분의 크기와 위상 정보를 포함한다.
 
