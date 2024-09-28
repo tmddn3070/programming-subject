@@ -45,7 +45,8 @@ $$X[k] = \sum_{n=0}^{N-1} x[n] \cdot \left( \cos\left( -2\pi \frac{k n}{N} \righ
 
 이 식을 실수 부분과 허수 부분으로 나누어 보면: 
 $$X[k] = \sum_{n=0}^{N-1} \left( x[n] \cdot \cos\left( -2\pi \frac{k n}{N} \right) \right) + i \cdot \sum_{n=0}^{N-1} \left( x[n] \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$$ 
-이때 $ \cos(-x) = \cos(x) $이고, $\sin(-x) = -\sin(x)$이므로, 각 항을 정리하면 다음과 같은 식을 얻을 수 있다. 
+
+이때 $\cos(-x) = \cos(x)$이고, $\sin(-x) = -\sin(x)$이므로, 각 항을 정리하면 다음과 같은 식을 얻을 수 있다. 
 ```math
 X[k] = \sum_{n=0}^{N-1} x[n] \cdot \cos\left( 2\pi \frac{k n}{N} \right) - i \cdot \sum_{n=0}^{N-1} x[n] \cdot \sin\left( 2\pi \frac{k n}{N} \right)
 ```
