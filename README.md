@@ -37,14 +37,14 @@
 ```math
 X[k] = \sum_{n=0}^{N-1} x[n] \cdot e^{-2\pi i \frac{k n}{N}}
 ```
-이때 x[n]은 주어진 신호의 n번째 값이고, X[k]는 주파수 도메인에서의 k번째 성분이다. 이를 증명하면,
+이때 $x[n]$은 주어진 신호의 n번째 값이고, $X[k]$는 주파수 도메인에서의 $k$번째 성분이다. 이를 증명하면,
 복소 지수 함수는 오일러의 공식에 의해 다음과 같이 표현된다:
 $e^{ix} = \cos(x) + i \cdot \sin(x)$ \
-따라서 푸리에 변환의 기본 식에서 지수 부분을 확장하면: \
-$X[k] = \sum_{n=0}^{N-1} x[n] \cdot \left( \cos\left( -2\pi \frac{k n}{N} \right) + i \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$
+따라서 푸리에 변환의 기본 식에서 지수 부분을 확장하면: 
+$$X[k] = \sum_{n=0}^{N-1} x[n] \cdot \left( \cos\left( -2\pi \frac{k n}{N} \right) + i \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$$
 
-이 식을 실수 부분과 허수 부분으로 나누어 보면: \
-$X[k] = \sum_{n=0}^{N-1} \left( x[n] \cdot \cos\left( -2\pi \frac{k n}{N} \right) \right) + i \cdot \sum_{n=0}^{N-1} \left( x[n] \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$ \
+이 식을 실수 부분과 허수 부분으로 나누어 보면: 
+$$X[k] = \sum_{n=0}^{N-1} \left( x[n] \cdot \cos\left( -2\pi \frac{k n}{N} \right) \right) + i \cdot \sum_{n=0}^{N-1} \left( x[n] \cdot \sin\left( -2\pi \frac{k n}{N} \right) \right)$$ 
 이때 $ \cos(-x) = \cos(x) $이고, $\sin(-x) = -\sin(x)$이므로, 각 항을 정리하면 다음과 같은 식을 얻을 수 있다. 
 ```math
 X[k] = \sum_{n=0}^{N-1} x[n] \cdot \cos\left( 2\pi \frac{k n}{N} \right) - i \cdot \sum_{n=0}^{N-1} x[n] \cdot \sin\left( 2\pi \frac{k n}{N} \right)
